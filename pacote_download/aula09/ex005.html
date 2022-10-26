@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background: rgb(7, 7, 7);
+            color: white;
+            font: normal 18pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em javascript</p>
+    <div id="msg" name="teste" class="classe1">Clique em mim</div>
+    <script>
+        var corpo =window.document.body
+        window.document.write(window.document.charset + "<br>")
+        window.document.write(window.navigator.appName + "<br>")   
+        window.document.write(window.document.URL + "<br>") 
+        var p1=window.document.getElementsByTagName('p')[1] // pega o paragrafo correspondente do colchetes (MARCA) ele é zero-based 
+        window.document.write("Pegando o primeiro paragrafo: <strong>" +p1.innerText+"</strong> <br>") //plota o conteudo do primeiro paragrafo 
+        //corpo.style.background = "orange" // muda a cor de fundo 
+        p1.style.color= 'red' // muda a cor do primeiro paragrafo
+        document.write(p1.innerHTML+'<br>') // pega o paragrafo já com a formatação
+        /*
+        var d=window.document.getElementById("msg") // pegando a div pelo ID
+        d.style.background="green"
+        d.innerText = "Estou aguardando" // muda o texto da div
+        */
+        var d = window.document.getElementsByName("teste")[0]
+        d.innerText='Olá'        
+        
+        var d = window.document.getElementsByClassName("classe1")[0]
+        d.innerText='Testando o Class' 
+        
+        //Selector
+        var d=window.document.querySelector('div#msg') //'#'' é para ID, '.' é para classe
+        d.style.color="blue"
+        
+    </script>
+</body>
+</html>

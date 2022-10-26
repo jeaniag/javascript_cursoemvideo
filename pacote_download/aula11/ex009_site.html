@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exer009</title>
+</head>
+<body>
+    <h1> Teste de nacionalidade </h1>
+    Onde você nasceu?<input Type="text" name="txtnm" id="txtnm"> 
+    <input type="button" value="Verificar" onclick="analisar()">
+    <div id="resp">
+    <script>
+        function analisar(){
+            var digitou=window.document.querySelector("input#txtnm")
+            país=digitou.value 
+            var resp=window.document.querySelector("div#resp")
+            if (país == "Brasil"){
+                resp.innerHTML=`<p> Você brasileiro</p>`
+            }else{
+                resp.innerHTML=`<p> Você estrangeiro</p>`                
+            }
+        }
+    </script>
+</body>
+</html>
